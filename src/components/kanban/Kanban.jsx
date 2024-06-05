@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Column from "./Column";
-import { DragDropContext } from "react-beautiful-dnd";
+import { DragDropContext } from "@hello-pangea/dnd";
 import { useContext } from "react";
 import { Context } from "../../context/contextApi";
 
@@ -16,13 +16,13 @@ export default function Kanban() {
             tasks: [
               {
                 id: "task-1.1",
-                title: "Daraz clone",
-                desc: "Clone full-stack daraz web-ecommerce store",
+                title: "E-commerce",
+                desc: "A full stack MERN app",
               },
               {
                 id: "task-1.2",
-                title: "Update Portfolio",
-                desc: "Adding nice animations to developer portfolio",
+                title: "File Transfer App",
+                desc: "ReactJS file transfer app using socket.io",
               },
             ],
           },
@@ -32,8 +32,8 @@ export default function Kanban() {
             tasks: [
               {
                 id: "task-2.1",
-                title: "Testing the Web App",
-                desc: "Adding unit tests to the backend APIs",
+                title: "Admin Dashboard",
+                desc: "ReactJs Admin dashboard with tailwind css",
               },
             ],
           },

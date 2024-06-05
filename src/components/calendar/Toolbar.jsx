@@ -139,13 +139,13 @@ export default function GetCustomToolbar(toolbar) {
             onClick={() => setDropdown(!dropdown)}
             id="dropdownDefaultButton"
             data-dropdown-toggle="dropdown"
-            class="text-white bg-black hover:bg-black font-medium rounded-lg text-lg px-5 py-2.5 text-center inline-flex items-center dark:bg-black dark:hover:bg-black dark:focus:ring-black"
+            className="text-white bg-black hover:bg-black font-medium rounded-lg text-lg px-5 py-2.5 text-center inline-flex items-center dark:bg-black dark:hover:bg-black dark:focus:ring-black"
             type="button"
           >
             {view.charAt(0).toUpperCase() + view.slice(1)}
 
             <svg
-              class="w-2.5 h-2.5 ml-2.5"
+              className="w-2.5 h-2.5 ml-2.5"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -153,9 +153,9 @@ export default function GetCustomToolbar(toolbar) {
             >
               <path
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="m1 1 4 4 4-4"
               />
             </svg>
@@ -163,12 +163,12 @@ export default function GetCustomToolbar(toolbar) {
 
           <div
             id="dropdown"
-            class={`z-10 bg-white absolute ${
+            className={`z-10 bg-white absolute ${
               !dropdown ? "hidden" : ""
             } top-14    right-0 transition-all divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700`}
           >
             <ul
-              class="py-2 text-lg text-gray-700 dark:text-gray-200"
+              className="py-2 text-lg text-gray-700 dark:text-gray-200"
               aria-labelledby="dropdownDefaultButton"
             >
               <li>

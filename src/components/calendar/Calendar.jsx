@@ -68,7 +68,7 @@ export default function Scheduler() {
   const handleSelectSlot = (slotInfo) => {
     const s = moment(slotInfo.start);
     const e = moment(slotInfo.end);
-    console.log(slotInfo.start, slotInfo.end);
+    // console.log(slotInfo.start, slotInfo.end);
     setSlotInfo(slotInfo);
     setstartDate(s);
     setendDate(e);
@@ -76,7 +76,7 @@ export default function Scheduler() {
   };
 
   const handleCreateEvent = () => {
-    console.log(slotInfo.start, slotInfo.end);
+    // console.log(slotInfo.start, slotInfo.end);
     const endDateForMonth = new Date(slotInfo.start);
     endDateForMonth.setHours(23, 59, 59, 999);
     console.log(endDateForMonth);
@@ -142,7 +142,7 @@ export default function Scheduler() {
 
               <div className="flex flex-row justify-between">
                 <span className="text-lg font-medium">Select Label </span>
-                <div class="labels flex items-center space-x-3 mb-4">
+                <div className="labels flex items-center space-x-3 mb-4">
                   {["red", "green", "blue", "yellow", "purple"].map((lbl) => {
                     return (
                       <div
