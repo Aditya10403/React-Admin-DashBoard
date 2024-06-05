@@ -31,7 +31,7 @@ export default function Sidebar({ setShowSidebar }) {
           <div className="flex flex-row space-x-5 items-center ">
             <img src={trans} alt=""/>
             <Link to={"/calendar"} className="text-xl">
-              Schedules
+              Calender
             </Link>
           </div>
           <div className="flex flex-row space-x-5 items-center ">
