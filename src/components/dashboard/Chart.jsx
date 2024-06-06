@@ -13,8 +13,8 @@ import { response } from "../../data/res";
 ChartJS.register(LineElement, LinearScale, PointElement, CategoryScale);
 
 function Chart() {
-  //   const { chartData } = useContext(Context);
-  const chartData = response.chartData;
+  const { chartData } = useContext(Context);
+  // const chartData = response.chartData;
   const labels = ["", "Week 1", "Week 2", "Week 3", "Week 4"];
   const [data, setdata] = useState();
 
@@ -89,9 +89,12 @@ function Chart() {
         {/* Mapping to render legends */}
         <div className="legends justify-center flex text-sm flex-col sm:flex-row">
           {chartData &&
-            Object.keys(chartData).map((legend,i) => {
+            Object.keys(chartData).map((legend, i) => {
               return (
-                <div className="flex mx-4 space-x-2 items-center flex-row " key={i}>
+                <div
+                  className="flex mx-4 space-x-2 items-center flex-row "
+                  key={i}
+                >
                   <div
                     className={`sm:w-4 w-3 sm:h-4 h-3 rounded-full ${
                       legend === "User" ? "bg-[#9BDD7C]" : "bg-[#E9A0A0]"

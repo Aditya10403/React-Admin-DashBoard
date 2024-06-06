@@ -35,8 +35,8 @@ export default function Dashboard() {
         break;
     }
   };
-  //   const { user, cardData } = useContext(Context);
-  const cardData = response.data;
+    const { user, cardData } = useContext(Context);
+  // const cardData = response.data;
 
   return (
     <>
@@ -46,7 +46,7 @@ export default function Dashboard() {
           cardData.map((card, i) => {
             return (
               <Card
-              key={i}
+                key={i}
                 bg={getBgAndId(card).bg}
                 icon={getBgAndId(card).icon}
                 text={card.title}

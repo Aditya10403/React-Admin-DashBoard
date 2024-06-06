@@ -30,14 +30,14 @@ export default function Scheduler() {
   const [endDate, setendDate] = useState();
   const [label, setLabel] = useState();
   const [title, setTitle] = useState("");
-  //   const { view } = useContext(Context);
-  const [view, setView] = useState("month");
+    const { view } = useContext(Context);
+  // const [view, setView] = useState("month");
 
   const [events, setEvents] = useState([
     {
       id: uuidv4(),
       data: {
-        title: "Tweeting a thread",
+        title: "Solving leetCode Problems",
         label: "red",
       },
       start: new Date(),

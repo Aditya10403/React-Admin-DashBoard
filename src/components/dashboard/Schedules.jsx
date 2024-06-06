@@ -3,7 +3,7 @@ import { Context } from "../../context/contextApi";
 import { response } from "../../data/res";
 
 export default function Schedules() {
-  const schedules = response.todaysSchedule;
+  const { schedules } = useContext(Context);
 
   return (
     <div className="pie-chart-box space-y-6 flex flex-col w-full px-6 py-4 sm:px-10 sm:py-7">
@@ -20,7 +20,7 @@ export default function Schedules() {
         {schedules.map((schedule, i) => {
           return (
             <div
-            key={i}
+              key={i}
               className={`flex flex-col border-l-8  px-2 ${
                 i === 0 ? "border-[#9BDD7C]" : "border-[#6972C3]"
               } sm:py-1 py-[0.5]`}

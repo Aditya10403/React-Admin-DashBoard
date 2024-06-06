@@ -19,17 +19,17 @@ export default function Sidebar({ setShowSidebar }) {
       </div>
 
       <div className="top">
-        <div className="font-bold text-4xl">Target.</div>
+        <div className="font-bold text-4xl">DashGo.</div>
 
         <div className="items [&>*]:cursor-pointer font-light my-14 flex flex-col space-y-8">
           <div className="flex flex-row space-x-5 items-center ">
-            <img src={dashboard} alt=""/>
+            <img src={dashboard} alt="" />
             <Link to={"/"} className="text-xl">
               Dashboard
             </Link>
           </div>
           <div className="flex flex-row space-x-5 items-center ">
-            <img src={trans} alt=""/>
+            <img src={trans} alt="" />
             <Link to={"/calendar"} className="text-xl">
               Calender
             </Link>
@@ -37,7 +37,7 @@ export default function Sidebar({ setShowSidebar }) {
           <div className="flex flex-row space-x-5 items-center ">
             <img src={sch} alt="" />
             <Link to={"/projects"} className="text-xl">
-              Projects
+              Kanban
             </Link>
           </div>
           <div className="flex flex-row space-x-5 items-center ">

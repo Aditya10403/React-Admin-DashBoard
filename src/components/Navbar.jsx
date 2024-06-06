@@ -5,6 +5,8 @@ import { Avatar, AvatarBadge, AvatarGroup } from "@chakra-ui/react";
 import { BiSearch } from "react-icons/bi";
 import { Context } from "../context/contextApi";
 import { useContext } from "react";
+import avatar from "../images/avatar.png";
+import { Link } from "react-router-dom";
 
 export default function Navbar({ showSidebar, setShowSidebar }) {
   const { user } = useContext(Context);
@@ -25,7 +27,13 @@ export default function Navbar({ showSidebar, setShowSidebar }) {
           </div>
         </div>
         <img src={notify} alt="" />
-        <img className="w-9 h-9 rounded-full" src={user?.img} alt="" />
+        <Link to="/form">
+          <img
+            className="w-9 h-9 rounded-full"
+            src={user?.img || avatar}
+            alt="profile"
+          />
+        </Link>
       </div>
 
       {/* Hamburger only shows on small screen */}

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
+import { response } from "../data/res";
 
 export const Context = createContext("");
 
@@ -19,13 +20,13 @@ export const ContextProvider = ({ children }) => {
             tasks: [
               {
                 id: "task-1.1",
-                title: "Daraz clone",
-                desc: "Clone full-stack daraz web-ecommerce store",
+                title: "E-commerce",
+                desc: "A full stack MERN app",
               },
               {
                 id: "task-1.2",
-                title: "Update Portfolio",
-                desc: "Adding nice animations to developer portfolio",
+                title: "File Transfer App",
+                desc: "ReactJS file transfer app using socket.io",
               },
             ],
           },
@@ -35,8 +36,8 @@ export const ContextProvider = ({ children }) => {
             tasks: [
               {
                 id: "task-2.1",
-                title: "Testing the Web App",
-                desc: "Adding unit tests to the backend APIs",
+                title: "Admin Dashboard",
+                desc: "ReactJs Admin dashboard with tailwind css",
               },
             ],
           },
@@ -59,9 +60,10 @@ export const ContextProvider = ({ children }) => {
 
   const getDataFromApi = async () => {
     try {
-      const { data } = await axios.get(
-        "https://api.npoint.io/e7268b28c20d13b52e97"
-      );
+      // const { data } = await axios.get(
+      //   "https://api.npoint.io/e7268b28c20d13b52e97"
+      // );
+      const data = response;
       setChartData(data.chartData);
       setPieChartData(data.pieChartData);
       setSchedules(data.todaysSchedule);

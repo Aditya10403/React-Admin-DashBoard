@@ -13,6 +13,7 @@ import { Spinner } from "@chakra-ui/react";
 import { ContextProvider } from "../context/contextApi";
 
 const Projects = React.lazy(() => import("../components/Projects"));
+const Form = React.lazy(() => import("../components/Form"));
 const Dashboard = React.lazy(() => import("../components/dashboard/Dashboard"));
 const Scheduler = React.lazy(() => import("../components/calendar/Calendar"));
 const Users = React.lazy(() => import("../components/users/Users"));
@@ -52,6 +53,7 @@ export default function Home() {
         >
           <Routes>
             <Route path="/" element={<Dashboard />} />
+            <Route path="/form" element={<Form />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/users" element={<Users />} />
             <Route path="/calendar" element={<Scheduler />} />

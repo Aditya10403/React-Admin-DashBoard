@@ -7,7 +7,7 @@ import { response } from "../../data/res.js";
 ChartJS.register(ArcElement);
 
 export function PieChart() {
-  const pieChartData = response.pieChartData;
+  const { pieChartData } = useContext(Context);
 
   const data = {
     labels: Object.keys(pieChartData),

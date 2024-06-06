@@ -6,12 +6,10 @@ import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
 import { Context } from "../../context/contextApi";
 
 export default function GetCustomToolbar(toolbar) {
-  const [toolbarDate, setToolbarDate] = useState(new Date());
-  const [view, setView] = useState("month");
-  const [label, setLabel] = useState("");
-  const [date, setDate] = useState(new Date());
+  const { toolbarDate, setToolbarDate, view, setView } = useContext(Context);
   // console.log(toolbar);
   const [dropdown, setDropdown] = useState(false);
+
 
   const goToDayView = () => {
     setDropdown(false);

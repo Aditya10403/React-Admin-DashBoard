@@ -7,50 +7,50 @@ import { IoCreateOutline, IoCreateSharp } from "react-icons/io5";
 
 export default function Task({ id, title, desc, index, isNew, column_id }) {
   const [newTaskDetails, setNewTaskDetails] = useState({ id: uuidv4() });
-  //   const { KanbanData, setKanbanData } = useContext(Context);
-  const [KanbanData, setKanbanData] = useState(
-    localStorage.getItem("kanban")
-      ? JSON.parse(localStorage.getItem("kanban"))
-      : [
-          {
-            id: "col-1",
-            column: "To-do",
-            tasks: [
-              {
-                id: "task-1.1",
-                title: "Daraz clone",
-                desc: "Clone full-stack daraz web-ecommerce store",
-              },
-              {
-                id: "task-1.2",
-                title: "Update Portfolio",
-                desc: "Adding nice animations to developer portfolio",
-              },
-            ],
-          },
-          {
-            id: "col-2",
-            column: "In Progress",
-            tasks: [
-              {
-                id: "task-2.1",
-                title: "Testing the Web App",
-                desc: "Adding unit tests to the backend APIs",
-              },
-            ],
-          },
-          {
-            id: "col-3",
-            column: "In Review",
-            tasks: [],
-          },
-          {
-            id: "col-4",
-            column: "Completed",
-            tasks: [],
-          },
-        ]
-  );
+  const { KanbanData, setKanbanData } = useContext(Context);
+  // const [KanbanData, setKanbanData] = useState(
+  //   localStorage.getItem("kanban")
+  //     ? JSON.parse(localStorage.getItem("kanban"))
+  //     : [
+  //         {
+  //           id: "col-1",
+  //           column: "To-do",
+  //           tasks: [
+  //             {
+  //               id: "task-1.1",
+  //               title: "E-commerce",
+  //               desc: "A full stack MERN app",
+  //             },
+  //             {
+  //               id: "task-1.2",
+  //               title: "File Transfer App",
+  //               desc: "ReactJS file transfer app using socket.io",
+  //             },
+  //           ],
+  //         },
+  //         {
+  //           id: "col-2",
+  //           column: "In Progress",
+  //           tasks: [
+  //             {
+  //               id: "task-2.1",
+  //               title: "Admin Dashboard",
+  //               desc: "ReactJs Admin dashboard with tailwind css",
+  //             },
+  //           ],
+  //         },
+  //         {
+  //           id: "col-3",
+  //           column: "In Review",
+  //           tasks: [],
+  //         },
+  //         {
+  //           id: "col-4",
+  //           column: "Completed",
+  //           tasks: [],
+  //         },
+  //       ]
+  // );
 
   const updateTaskDetails = (e) => {
     setNewTaskDetails({
