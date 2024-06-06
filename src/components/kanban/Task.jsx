@@ -8,7 +8,6 @@ import { IoCreateOutline, IoCreateSharp } from "react-icons/io5";
 export default function Task({ id, title, desc, index, isNew, column_id }) {
   const [newTaskDetails, setNewTaskDetails] = useState({ id: uuidv4() });
   const { KanbanData, setKanbanData } = useContext(Context);
-  // const [KanbanData, setKanbanData] = useState(
   //   localStorage.getItem("kanban")
   //     ? JSON.parse(localStorage.getItem("kanban"))
   //     : [
@@ -60,13 +59,13 @@ export default function Task({ id, title, desc, index, isNew, column_id }) {
   };
 
   const addNewTaskDetails = () => {
-    console.log(column_id);
+    // console.log(column_id);
 
     const columnToUpdateIndex = KanbanData.findIndex((column) => {
       return column.id === column_id;
     });
 
-    console.log(columnToUpdateIndex);
+    // console.log(columnToUpdateIndex);
 
     setKanbanData((prevArray) => {
       const newArray = [...prevArray];
@@ -82,7 +81,7 @@ export default function Task({ id, title, desc, index, isNew, column_id }) {
       );
       newArray[columnToUpdateIndex].tasks.splice(temporaryTaskIndex, 1);
 
-      console.log(temporaryTaskIndex, newArray);
+      // console.log(temporaryTaskIndex, newArray);
       return newArray;
     });
   };
@@ -93,7 +92,7 @@ export default function Task({ id, title, desc, index, isNew, column_id }) {
       const currentColumnIndex = newArray.findIndex((col) => {
         return col.id === column_id;
       });
-      console.log(newArray[currentColumnIndex].tasks, id);
+      // console.log(newArray[currentColumnIndex].tasks, id);
       const taskToRemoveIndex = newArray[currentColumnIndex].tasks.findIndex(
         (task) => {
           return task.id === id;

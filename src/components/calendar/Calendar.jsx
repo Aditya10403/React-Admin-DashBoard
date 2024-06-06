@@ -30,8 +30,7 @@ export default function Scheduler() {
   const [endDate, setendDate] = useState();
   const [label, setLabel] = useState();
   const [title, setTitle] = useState("");
-    const { view } = useContext(Context);
-  // const [view, setView] = useState("month");
+  const { view } = useContext(Context);
 
   const [events, setEvents] = useState([
     {
@@ -79,7 +78,7 @@ export default function Scheduler() {
     // console.log(slotInfo.start, slotInfo.end);
     const endDateForMonth = new Date(slotInfo.start);
     endDateForMonth.setHours(23, 59, 59, 999);
-    console.log(endDateForMonth);
+    // console.log(endDateForMonth);
 
     setEvents((ev) => {
       return [

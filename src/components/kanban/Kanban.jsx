@@ -6,53 +6,10 @@ import { Context } from "../../context/contextApi";
 
 export default function Kanban() {
   const { KanbanData, setKanbanData } = useContext(Context);
-  // const [KanbanData, setKanbanData] = useState(
-  //   localStorage.getItem("kanban")
-  //     ? JSON.parse(localStorage.getItem("kanban"))
-  //     : [
-  //         {
-  //           id: "col-1",
-  //           column: "To-do",
-  //           tasks: [
-  //             {
-  //               id: "task-1.1",
-  //               title: "E-commerce",
-  //               desc: "A full stack MERN app",
-  //             },
-  //             {
-  //               id: "task-1.2",
-  //               title: "File Transfer App",
-  //               desc: "ReactJS file transfer app using socket.io",
-  //             },
-  //           ],
-  //         },
-  //         {
-  //           id: "col-2",
-  //           column: "In Progress",
-  //           tasks: [
-  //             {
-  //               id: "task-2.1",
-  //               title: "Admin Dashboard",
-  //               desc: "ReactJs Admin dashboard with tailwind css",
-  //             },
-  //           ],
-  //         },
-  //         {
-  //           id: "col-3",
-  //           column: "In Review",
-  //           tasks: [],
-  //         },
-  //         {
-  //           id: "col-4",
-  //           column: "Completed",
-  //           tasks: [],
-  //         },
-  //       ]
-  // );
-
+  
   const handleDragF = (results) => {
     const { source, destination } = results;
-    console.log(source, destination);
+    // console.log(source, destination);
 
     // If the destinations are weird
     if (!destination) return;

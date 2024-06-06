@@ -10,7 +10,6 @@ export default function GetCustomToolbar(toolbar) {
   // console.log(toolbar);
   const [dropdown, setDropdown] = useState(false);
 
-
   const goToDayView = () => {
     setDropdown(false);
     toolbar.onView("day");
@@ -80,7 +79,7 @@ export default function GetCustomToolbar(toolbar) {
       );
     }
     toolbar.onNavigate("next", newDate);
-    console.log(newDate);
+    // console.log(newDate);
     setToolbarDate(newDate);
   };
 

@@ -19,7 +19,9 @@ export default function Sidebar({ setShowSidebar }) {
       </div>
 
       <div className="top">
-        <div className="font-bold text-4xl">DashGo.</div>
+        <div className="font-bold text-4xl">
+          <strong className="text-[#5CE1E6]">Dash</strong>Go.
+        </div>
 
         <div className="items [&>*]:cursor-pointer font-light my-14 flex flex-col space-y-8">
           <div className="flex flex-row space-x-5 items-center ">

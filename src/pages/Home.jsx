@@ -10,7 +10,6 @@ import {
 } from "react-router-dom";
 import { Suspense } from "react";
 import { Spinner } from "@chakra-ui/react";
-import { ContextProvider } from "../context/contextApi";
 
 const Projects = React.lazy(() => import("../components/Projects"));
 const Form = React.lazy(() => import("../components/Form"));

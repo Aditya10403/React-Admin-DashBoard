@@ -8,13 +8,11 @@ import {
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 import { Context } from "../../context/contextApi";
-import { response } from "../../data/res";
 
 ChartJS.register(LineElement, LinearScale, PointElement, CategoryScale);
 
 function Chart() {
   const { chartData } = useContext(Context);
-  // const chartData = response.chartData;
   const labels = ["", "Week 1", "Week 2", "Week 3", "Week 4"];
   const [data, setdata] = useState();
 

@@ -147,11 +147,11 @@ export default function Users() {
   const sortBySerial = (arr, orderBy) => {
     switch (orderBy) {
       case "asc":
-        console.log(orderBy);
+        // console.log(orderBy);
         return arr.sort((a, b) => a.no - b.no);
 
       case "desc":
-        console.log(orderBy);
+        // console.log(orderBy);
         return arr.sort((a, b) => b.no - a.no);
 
       default:
@@ -166,7 +166,7 @@ export default function Users() {
 
   const handleSortSerialNo = () => {
     setRows(sortBySerial(rows, serialOrderDirection));
-    console.log(sortBySerial(rows, serialOrderDirection));
+    // console.log(sortBySerial(rows, serialOrderDirection));
     setSerialOrderDirection(serialOrderDirection === "asc" ? "desc" : "asc");
   };
 

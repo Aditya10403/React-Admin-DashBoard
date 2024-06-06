@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { Context } from "../../context/contextApi";
-import { response } from "../../data/res";
 
 export default function Schedules() {
   const { schedules } = useContext(Context);

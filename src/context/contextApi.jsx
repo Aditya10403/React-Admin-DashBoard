@@ -1,4 +1,3 @@
-import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 import { response } from "../data/res";
 
@@ -60,9 +59,6 @@ export const ContextProvider = ({ children }) => {
 
   const getDataFromApi = async () => {
     try {
-      // const { data } = await axios.get(
-      //   "https://api.npoint.io/e7268b28c20d13b52e97"
-      // );
       const data = response;
       setChartData(data.chartData);
       setPieChartData(data.pieChartData);

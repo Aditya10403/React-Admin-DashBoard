@@ -9,7 +9,6 @@ import likes from "../../images/Vector (1).svg";
 import users from "../../images/Vector (2).svg";
 import trans from "../../images/total_transactions_icon.svg";
 import { useContext } from "react";
-import { response } from "../../data/res";
 
 export default function Dashboard() {
   const getBgAndId = (card) => {
@@ -35,8 +34,7 @@ export default function Dashboard() {
         break;
     }
   };
-    const { user, cardData } = useContext(Context);
-  // const cardData = response.data;
+  const { user, cardData } = useContext(Context);
 
   return (
     <>
