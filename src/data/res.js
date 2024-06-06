@@ -2,19 +2,19 @@ export const response = {
   data: [
     {
       title: "Revenues",
-      value: 2128790,
+      value: 3528990,
     },
     {
       title: "Transactions",
-      value: 1520,
+      value: 245,
     },
     {
       title: "Likes",
-      value: 9721,
+      value: 11810,
     },
     {
       title: "Users",
-      value: 892,
+      value: 565,
     },
   ],
   chartData: {
@@ -36,20 +36,20 @@ export const response = {
     },
   },
   pieChartData: {
-    "Basic Trees": 55,
-    "Super Hoodies": 14,
-    "Custom Short Pants": 31,
+    "Software Solutions": 45,
+    "Cloud Services": 25,
+    "IT Consultancy": 30,
   },
   todaysSchedule: [
     {
-      time: "14.00-15.00",
-      location: "Sunset Road, Kuta, Bali ",
-      meetingTitle: "Meeting with suppliers from Kuta Bali",
+      time: "09:00-11:00",
+      location: "Bangalore, Karnataka",
+      meetingTitle: "Client Presentation for New Web Project",
     },
     {
-      time: "18.00-20.00",
-      location: "Central Jakarta",
-      meetingTitle: "Check operation at Giga Factory 1",
+      time: "14:00-15:00",
+      location: "Hyderabad, Telangana",
+      meetingTitle: "Discussion on Agile Implementation",
     },
   ],
 };

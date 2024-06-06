@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { FiMenu } from "react-icons/fi";
 import notify from "../images/notify.svg";
+import { MdDarkMode, MdOutlineLightMode } from "react-icons/md";
 import { Avatar, AvatarBadge, AvatarGroup } from "@chakra-ui/react";
 import { BiSearch } from "react-icons/bi";
 import { Context } from "../context/contextApi";
@@ -10,6 +11,11 @@ import { Link } from "react-router-dom";
 
 export default function Navbar({ showSidebar, setShowSidebar }) {
   const { user } = useContext(Context);
+  const [mode, setMode] = useState(false);
+
+  const handleMode = () => {
+    setMode(!mode);
+  };
 
   return (
     <nav className="flex flex-row justify-between">
@@ -25,6 +31,11 @@ export default function Navbar({ showSidebar, setShowSidebar }) {
           <div className="icon absolute right-3 top-3">
             <BiSearch />
           </div>
+        </div>
+        <div className="flex">
+          <button onClick={handleMode}>
+            {mode ? <MdOutlineLightMode size={24} /> : <MdDarkMode size={24} />}
+          </button>
         </div>
         <img src={notify} alt="" />
         <Link to="/form">

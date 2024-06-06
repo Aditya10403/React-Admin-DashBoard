@@ -25,38 +25,40 @@ export default function Form() {
   };
 
   return (
-    <div>
+    <div className="">
       <section className="bg-gray-100 dark:bg-gray-900 rounded-lg">
-        <div className="flex flex-col-reverse sm:flex-row  items-center justify-center mx-auto lg:py-0">
+        <div className="flex flex-col-reverse sm:flex-row items-center justify-center lg:p-0 mx-auto">
           {/* Banner */}
-          <div className="flex flex-col justify-between sm:w-[40%] w-full sm:h-full items-center">
-            <div className="font-bold text-center sm:flex items-center font-[Montserrat] justify-center text-white hidden text-7xl ">
+          <div className="md:flex flex-col justify-between sm:w-[40%] w-full sm:h-full items-center hidden md:m-5">
+            <div className="font-bold text-center sm:flex items-center font-[Montserrat] justify-center text-white text-7xl">
               DashGo.
             </div>
-            <p className=" text-red-900">Currently registering is not available!</p>
+            <p className=" text-red-900">
+              Currently registering is not available!
+            </p>
           </div>
           {/* Form */}
-          <div className="w-full sm:w-[60%]  sm:h-full flex items-center justify-center h-screen rounded-lg shadow dark:border md:mt-0  xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-            <div className="p-6 w-[28rem] my-auto self-center space-y-4 md:space-y-6 sm:p-8">
+          <div className="w-full sm:w-[60%] sm:h-full flex items-center justify-center rounded-lg shadow dark:border md:mt-0  xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+            <div className="p-3 md:p-6 w-[28rem] self-center space-y-1 md:space-y-6 sm:p-2 md:my-5">
               {/* Heading */}
               <div>
-                <h1 className="text-4xl font-bold leading-tight tracking-tight text-gray-900 md:text-4xl dark:text-white">
+                <h1 className="text-2xl font-bold leading-tight tracking-tight text-gray-900 md:text-4xl dark:text-white">
                   Sign in
                 </h1>
                 <h4>Sign in to your account</h4>
               </div>
 
-              <div className="buttons text-sm [_&]:cursor-pointer flex justify-between  items-center space-x-2">
+              <div className="buttons text-sm [_&]:cursor-pointer flex justify-evenly md:justify-between items-center space-x-2">
                 <div
                   onClick={continueWithGoogle}
-                  className="btn w-1/2 bg-white text-gray-500 font-medium space-x-1 rounded-xl py-1  sm:py-2 flex flex-row justify-evenly items-center px-1  sm:px-3"
+                  className="btn md:w-1/2 bg-white text-gray-500 font-medium space-x-1 md:rounded-xl rounded-full py-1 sm:py-2 flex flex-row justify-evenly items-center px-1"
                 >
                   <img src={google} className="w-6" />
-                  <span className="">Sign in with Google</span>
+                  <span className="hidden md:block">Sign in with Google</span>
                 </div>
-                <div className="btn w-1/2 bg-white text-gray-500 font-medium space-x-1 rounded-xl py-1  sm:py-2 flex flex-row justify-evenly items-center px-1  sm:px-3">
+                <div className="btn md:w-1/2 bg-white text-gray-500 font-medium space-x-1 rounded-full md:rounded-xl py-1  sm:py-2 flex flex-row justify-evenly items-center px-1 sm:px-3">
                   <img src={apple} className="w-6" />
-                  <span className="">Sign in with Apple</span>
+                  <span className="hidden md:block">Sign in with Apple</span>
                 </div>
               </div>
               <form

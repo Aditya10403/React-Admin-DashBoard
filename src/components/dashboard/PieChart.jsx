@@ -31,15 +31,15 @@ export function PieChart() {
 
   const getClassBgOfPie = (product) => {
     switch (product) {
-      case "Basic Trees":
+      case "Software Solutions":
         return "bg-[#98D89E]";
         break;
 
-      case "Super Hoodies":
+      case "Cloud Services":
         return "bg-[#EE8484]";
         break;
 
-      case "Custom Short Pants":
+      case "IT Consultancy":
         return "bg-[#F6DC7D]";
         break;
 

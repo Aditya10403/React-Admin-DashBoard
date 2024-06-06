@@ -54,8 +54,12 @@ export default function Sidebar({ setShowSidebar }) {
       </div>
 
       <div className="contact text-start w-1/2 flex flex-col  text-gray-400 ">
-        <div>Help</div>
-        <div>Contact us</div>
+        <a href="https://adityashukla-portfolio.netlify.app/#contact">
+          <div>Help</div>
+        </a>
+        <a href="https://adityashukla-portfolio.netlify.app/#contact">
+          <div>Contact us</div>
+        </a>
       </div>
     </div>
   );

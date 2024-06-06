@@ -20,7 +20,7 @@ export default function Card({ bg, text, value, icon }) {
       </div>
       <div className="text-md font-medium">Total {text}</div>
       <div className="text-3xl font-bold">
-        {text === "Revenues" ? "$" : ""}
+        {text === "Revenues" ? "₹ " : ""}
         {addCommasToNumber(value)}
       </div>
     </div>
