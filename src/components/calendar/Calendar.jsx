@@ -5,8 +5,8 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import "./reactCalendar.css";
 import GetCustomToolbar from "./Toolbar";
 import GetCustomHeader from "./GetCustomHeader";
-// import Modal from "@mui/material/Modal";
-import Modal from "@material-ui/core/Modal";
+import Modal from "@mui/material/Modal";
+// import Modal from "@material-ui/core/Modal";
 import GetCustomEvent from "./GetCustomEvent";
 import { Context } from "../../context/contextApi";
 import "react-big-calendar/lib/addons/dragAndDrop/styles.css";
@@ -16,7 +16,6 @@ import withDragAndDrop, {
 import { v4 as uuidv4 } from "uuid";
 import EventUpdateModal from "./EventUpdateModal";
 import { MdOutlineDone } from "react-icons/md";
-import { response } from "../../data/res";
 
 const localizer = momentLocalizer(moment); // or globalizeLocalizer
 const MemoizedGetCustomToolbar = React.memo(GetCustomToolbar);

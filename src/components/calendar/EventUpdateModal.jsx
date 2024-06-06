@@ -1,4 +1,4 @@
-import { Modal } from "@material-ui/core";
+import Modal from '@mui/material/Modal';
 import moment from "moment";
 import React from "react";
 import { useState } from "react";

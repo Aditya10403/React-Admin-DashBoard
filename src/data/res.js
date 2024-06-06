@@ -14,7 +14,7 @@ export const response = {
     },
     {
       title: "Users",
-      value: 565,
+      value: 892,
     },
   ],
   chartData: {

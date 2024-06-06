@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { FiMenu } from "react-icons/fi";
 import notify from "../images/notify.svg";
 import { MdDarkMode, MdOutlineLightMode } from "react-icons/md";
-import { Avatar, AvatarBadge, AvatarGroup } from "@chakra-ui/react";
 import { BiSearch } from "react-icons/bi";
 import { Context } from "../context/contextApi";
 import { useContext } from "react";

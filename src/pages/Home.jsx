@@ -9,7 +9,6 @@ import {
   //   useNavigate,
 } from "react-router-dom";
 import { Suspense } from "react";
-import { Spinner } from "@chakra-ui/react";
 
 const Projects = React.lazy(() => import("../components/Projects"));
 const Form = React.lazy(() => import("../components/Form"));
