@@ -1,6 +1,10 @@
 <div align="center">
-<h3 align="center">React To-Do List</h3>
-      <img src="src/assets/todo.jpeg" alt="Project Banner">
+<h3 align="center">DashGo - Admin DashBoard</h3>
+      <img src="src/assets/Dash.png" alt="Project Banner">
+      <br>
+      <img src="src/assets/Dark.png" alt="Project Banner">
+      <br/>
+      <img src="src/assets/Kan.png" alt="Project Banner">
   <br />
 
   <!-- <div>
@@ -14,32 +18,40 @@
 2. ⚙️ [Tech Stack](#tech-stack)
 3. 🔋 [Features](#features)
 4. 🤸 [Quick Start](#quick-start)
+   - [Prerequisites](#prerequisites)
+   - [Cloning the Repository](#cloning-the-repository)
+   - [Running the Project](#running-the-project)
+   - [How to Use It](#how-to-use-it)
 5. 🕸️ [Snippets](#snippets)
 
 ## <a name="introduction">🤖 Introduction</a>
 
-The React To-Do List component allows users to add, remove, and mark tasks as completed. This component validates task input, dynamically displays tasks, and offers optional features such as sorting, filtering, and localStorage integration. It is built using Vite and Tailwind CSS, with state management handled through the TodoContext.
+Welcome to the React Admin Dashboard project! This project is created with Vite and Tailwind CSS, offering a smooth user experience with customizable themes (light mode/dark mode). The dashboard includes tables, charts, a calendar, and a Kanban board. The Users table features sorting (by age and S. No.) and searching (by name). Additionally, the project includes Google Auth sign-in functionality, implemented using Firebase Console, and leverages Context API for state management.
 
-Used `vite` as Vite offers faster build times compared to Create-React-App due to its pre-bundling and efficient hot module replacement 
+Used `vite` as Vite offers faster build times compared to Create-React-App due to its pre-bundling and efficient hot module replacement
 
 ## <a name="tech-stack">⚙️ Tech Stack</a>
 
-- React.js
-- Tailwind
-- Context API
-
+- **React**
+- **Tailwind CSS**
+- **Firebase**
+- **Context API**
 
 ## <a name="features">🌟 Features</a>
 
-👉 **Task Addition/Removal**: Users can add new tasks or remove tasks from the list.
+👉 **Customizable Themes**: Users can switch between light mode and dark mode for an optimal viewing experience.
 
-👉 **Dynamic Display**: Tasks are dynamically displayed on the UI.
+👉 **Tables with Sorting and Searching**: The Users table allows sorting by age and serial number, as well as searching by name.
 
-👉 **Sorting**: Tasks can be sorted in ascending or descending order.
+👉 **Charts**: Various charts to visualize data effectively.
 
-👉 **Filtering**: Tasks can be filtered by their completion status.
+👉 **Calendar**: A fully functional calendar for tracking events.
 
-👉 **LocalStorage Integration**: Tasks are saved to and loaded from localStorage, preserving the list across page reloads.
+👉 **Kanban Board**: A Kanban board to manage tasks and projects.
+
+👉 **Google Auth Sign-in**: Secure sign-in functionality using Google Authentication via Firebase.
+
+👉 **Smooth User Experience**: A highly responsive and intuitive interface ensuring smooth user interactions.
 
 ## <a name="quick-start">🤸 Quick Start</a>
 
@@ -56,49 +68,79 @@ Make sure you have the following installed on your machine:
 **Cloning the Repository**
 
 ```bash
-git clone https://github.com/Aditya10403/React-TodoList.git
-cd React-TodoList
+git clone https://github.com/Aditya10403/React-Admin-DashBoard.git
+cd React-Admin-DashBoard
 ```
 
 **Running the Project**
 
 Install dependencies
+
 ```bash
 npm install # or npm i
 ```
 
 Start the server:
+
 ```bash
 npm run dev
 ```
 
-- Open your browser and navigate to `http://localhost:5173`. 
+- Open your browser and navigate to `http://localhost:5173`.
 
 **How to Use**
 
-👉 **Adding a Task**: 
-- Enter a task in the input field and press the `Add` button.
-- The task will appear in the list below.
+**`Customizable Themes`**
 
-👉 **Marking a Task as Completed**: 
-- Click on the checkbox next to a task to mark it as completed.
-- The task will be visually indicated as completed.
+👉 **Switching Themes**: Use the theme toggle button to switch between light mode and dark mode.
 
-👉 **Removing a Task**: 
-- Click on the ❌ button next to a task to remove it from the list.
+**`Users Table`**
 
-👉 **Updating a Task**: 
-- Click on the ✏️ button next to a task to edit it.
-- The task's text will be loaded into the input field for editing.
-- Modify the text and press the 📁 button again to save the changes.
+👉 **Sorting**: Click on the column headers (Age, S. No.) to sort the table data accordingly.
 
-👉 **Sorting Tasks**: 
-- Use the sort option to order tasks alphabetically in ascending or descending order.
+👉 **Searching**: Enter a name in the search input field to filter the users' list by name
 
-👉 **Filtering Tasks**: 
-- Use the filter options to view `All` tasks, only `Completed` tasks, or only `Active` tasks.
+**`Users Table`**
+
+👉 **Viewing Charts**: Navigate to the charts section to view different data visualizations.
+
+**`Calendar`**
+
+👉 **Adding Events**: Click on a date to add a new event.
+
+**`Kanban Board`**
+
+👉 **Managing Tasks**: Drag and drop tasks between different columns to update their status.
+
+**`Google Auth Sign-in`**
+
+👉 **Signing In**: Click on the Google sign-in button to authenticate using your Google account.
 
 ## <a name="snippets">🕸️ Snippets</a>
+
+<details>
+<summary><code>index.html</code></summary>
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Admin Dashboard created using ReactJS" />
+    <title>DashGo</title>
+  </head>
+
+  <body className="dark bg-[#F5F5F5] transition-all ease-in delay-300">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+```
+
+</details>
 
 <details>
 <summary><code>vite.config.js</code></summary>
@@ -109,16 +151,8 @@ import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-  ],
-  resolve: {
-    alias: {
-      "@mui/styled-engine": "@mui/styled-engine-sc",
-    },
-  },
+  plugins: [react()],
 });
-
 ```
 
 </details>
@@ -129,23 +163,23 @@ export default defineConfig({
 ```javascript
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        nuito: ["Nunito Sans", "sans-serif"],
+      },
+    },
   },
   plugins: [],
-}
+};
 ```
 
 </details>
 
-
 ## <a>🚨 Disclaimer</a>
 
-The ToDo List implemented here is intended for educational purposes only.
+The Admin DashBoard implemented here is intended for educational purposes only.
 
 #
-
