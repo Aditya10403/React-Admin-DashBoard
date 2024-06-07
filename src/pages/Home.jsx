@@ -5,8 +5,6 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
-  BrowserRouter,
-  //   useNavigate,
 } from "react-router-dom";
 import { Suspense } from "react";
 
@@ -28,7 +26,7 @@ export default function Home() {
   const [showSidebar, setShowSidebar] = useState(false);
 
   return (
-    <div className="bg-[#F5F5F5] relative flex flex-row items-center w-full ">
+    <div className="bg-[#F5F5F5] dark:bg-[#212121] relative flex flex-row items-center w-full ">
       {/* Sidebar */}
       <div
         className={`sidebar transition-all duration-500 z-50 ${
@@ -38,7 +36,7 @@ export default function Home() {
         <Sidebar setShowSidebar={setShowSidebar} />
       </div>
 
-      <div className=" ml-0 sm:ml-64 w-full flex flex-col space-y-5 px-10 pt-6 ">
+      <div className=" ml-0 sm:ml-64 w-full flex flex-col space-y-5 px-10 pt-6 mb-10">
         {/* User Navbar */}
         <Navbar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
 

@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
-import { Context } from "./context/contextApi";
+import { Context, ContextProvider } from "./context/contextApi";
 import Home from "./pages/Home";
-import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 
 function App() {
   const { user, setUser } = useContext(Context);
@@ -34,11 +34,13 @@ function App() {
   }, [user]);
 
   return (
-    <div className="App h-screen font-nuito">
-      <Routes>
-        <Route path="*" element={<Home />} />
-      </Routes>
-    </div>
+    <ContextProvider>
+      <div className="App h-screen font-nuito bg-[#F5F5F5] dark:bg-[#212121]">
+        <Routes>
+          <Route path="*" element={<Home />} />
+        </Routes>
+      </div>
+    </ContextProvider>
   );
 }
 

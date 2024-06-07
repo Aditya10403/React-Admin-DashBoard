@@ -201,7 +201,7 @@ export default function Scheduler() {
   }, [events]);
 
   return (
-    <div className="h-[85vh]">
+    <div className="h-[85vh] text-black dark:text-[rgb(200,200,200)]">
       <DragAndDropCalendar
         localizer={localizer}
         timeslots={1}

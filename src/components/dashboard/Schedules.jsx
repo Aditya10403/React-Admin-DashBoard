@@ -15,7 +15,7 @@ export default function Schedules() {
       </div>
 
       {/* Schedules */}
-      <div className=" flex flex-col space-y-3 text-[#666] justify-center">
+      <div className=" flex flex-col space-y-3 text-[#666] dark:text-white justify-center">
         {schedules.map((schedule, i) => {
           return (
             <div
@@ -27,7 +27,7 @@ export default function Schedules() {
               <div className="sm:text-lg text-md font-semibold">
                 {schedule.meetingTitle}
               </div>
-              <div className="sm:text-md text-sm font-medium text-gray-400">
+              <div className="sm:text-md text-sm font-medium text-indigo-400 dark:text-indigo-300">
                 {schedule.time}
               </div>
               <div className="sm:text-md text-sm font-medium text-gray-400">

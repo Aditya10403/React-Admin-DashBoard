@@ -1,19 +1,28 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../../context/contextApi";
 
 export default function Card({ bg, text, value, icon }) {
-  function addCommasToNumber(number) {
-    // Convert the number to a string
-    const numberString = number.toString();
+  const { themeMode } = useContext(Context);
 
-    // Use regular expression to add commas every three digits from the right
-    const formattedNumber = numberString.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  function addCommasToNumber(number) {
+    const numberString = Math.floor(number).toString();
+
+    const lastThree = numberString.slice(-3);
+    const otherNumbers = numberString.slice(0, -3);
+
+    const formattedNumber =
+      otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") +
+      (otherNumbers ? "," : "") +
+      lastThree;
 
     return formattedNumber;
   }
-
   return (
     <div
-      className={`relative bg-[${bg}] rounded-2xl flex flex-col justify-end space-y-1 px-7 h-32 py-5`}
+      className={`relative bg-[${bg}] rounded-2xl flex flex-col justify-end space-y-1 px-7 h-32 py-5 ${
+        themeMode === "dark" ? "shadow-lg" : ""
+      }`}
+      style={themeMode === "dark" ? { boxShadow: `1px 4px 8px ${bg}` } : {}}
     >
       <div className="absolute top-4 right-5">
         <img className="w-7" src={icon} />

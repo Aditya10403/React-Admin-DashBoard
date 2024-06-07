@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
+import React, { useContext, useEffect, useState } from "react";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
 import { TablePagination, TableSortLabel, TextField } from "@mui/material";
+import { Context } from "../../context/contextApi";
 
 export default function Users() {
   const [ageOrderDirection, setAgeOrderDirection] = useState("asc");
@@ -133,6 +134,8 @@ export default function Users() {
     },
   ]);
 
+  const { themeMode } = useContext(Context);
+
   const sortByAge = (arr, orderBy) => {
     switch (orderBy) {
       case "asc":
@@ -187,12 +190,18 @@ export default function Users() {
         label="Search"
         variant="outlined"
         value={searchQuery}
+        focused
+        InputProps={{
+          style: {
+            color: themeMode === "dark" ? "white" : "black",
+          },
+        }}
         onChange={(e) => setSearchQuery(e.target.value)}
         fullWidth
-        style={{ marginBottom: 16 }}
+        style={{ marginBottom: 16, color: "white" }}
       />
 
-      <TableContainer component={Paper}>
+      <TableContainer component={Paper} className={`dark:bg-[#313131]`}>
         <Table aria-label="simple table">
           <TableHead>
             <TableRow>
@@ -200,36 +209,84 @@ export default function Users() {
                 onClick={handleSortSerialNo}
                 active={true}
                 direction={serialOrderDirection}
+                style={{
+                  color: themeMode === "dark" ? "white" : "black",
+                }}
               >
-                <TableCell>S.No</TableCell>
+                <TableCell
+                  style={{ color: themeMode === "dark" ? "white" : "black" }}
+                >
+                  S.No
+                </TableCell>
               </TableSortLabel>
-              <TableCell>Name</TableCell>
+              <TableCell
+                style={{ color: themeMode === "dark" ? "white" : "black" }}
+              >
+                Name
+              </TableCell>
               <TableSortLabel
                 onClick={handleSortAge}
                 active={true}
                 direction={ageOrderDirection}
               >
-                <TableCell>Age</TableCell>
+                <TableCell
+                  style={{ color: themeMode === "dark" ? "white" : "black" }}
+                >
+                  Age
+                </TableCell>
               </TableSortLabel>
-              <TableCell>Role</TableCell>
-              <TableCell>Gender</TableCell>
+              <TableCell
+                style={{ color: themeMode === "dark" ? "white" : "black" }}
+              >
+                Role
+              </TableCell>
+              <TableCell
+                style={{ color: themeMode === "dark" ? "white" : "black" }}
+              >
+                Gender
+              </TableCell>
             </TableRow>
           </TableHead>
 
           <TableBody>
             {rowsAfterPagingAndFiltering().map((row) => (
               <TableRow key={row.no}>
-                <TableCell>{row.no}</TableCell>
-                <TableCell align="left">{row.name}</TableCell>
-                <TableCell align="left">{row.age}</TableCell>
-                <TableCell align="left">{row.role}</TableCell>
-                <TableCell align="left">{row.gender}</TableCell>
+                <TableCell
+                  style={{ color: themeMode === "dark" ? "white" : "black" }}
+                >
+                  {row.no}
+                </TableCell>
+                <TableCell
+                  align="left"
+                  style={{ color: themeMode === "dark" ? "white" : "black" }}
+                >
+                  {row.name}
+                </TableCell>
+                <TableCell
+                  align="left"
+                  style={{ color: themeMode === "dark" ? "white" : "black" }}
+                >
+                  {row.age}
+                </TableCell>
+                <TableCell
+                  align="left"
+                  style={{ color: themeMode === "dark" ? "white" : "black" }}
+                >
+                  {row.role}
+                </TableCell>
+                <TableCell
+                  align="left"
+                  style={{ color: themeMode === "dark" ? "white" : "black" }}
+                >
+                  {row.gender}
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
         </Table>
 
         <TablePagination
+          style={{ color: themeMode === "dark" ? "white" : "black" }}
           rowsPerPage={rowsPerPage}
           rowsPerPageOptions={pages}
           page={page}

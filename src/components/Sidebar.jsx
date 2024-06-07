@@ -1,15 +1,15 @@
-import React from "react";
-import dashboard from "../images/dashboard_icon.svg";
-import trans from "../images/transaction_icon.svg";
-import sch from "../images/schedule_icon.svg";
-import user from "../images/user_icon.svg";
-import settings from "../images/setting_icon.svg";
+import React, { useContext } from "react";
 import { AiOutlineClose } from "react-icons/ai";
+import { FaCalendarAlt, FaRegUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { Context } from "../context/contextApi";
+import { MdSpaceDashboard, MdViewKanban } from "react-icons/md";
 
 export default function Sidebar({ setShowSidebar }) {
+  const { themeMode } = useContext(Context);
+
   return (
-    <div className="bg-black font-[Montserrat] text-white py-12 rounded-2xl w-full h-full flex flex-col justify-between items-center relative">
+    <div className="bg-black font-[Montserrat] text-white dark:text-black dark:bg-[#F5F5F5] py-12 rounded-2xl w-full h-full flex flex-col justify-between items-center relative">
       {/* Close Icon on Sidebar (only on small screens) */}
       <div
         onClick={() => setShowSidebar(false)}
@@ -20,30 +20,44 @@ export default function Sidebar({ setShowSidebar }) {
 
       <div className="top">
         <div className="font-bold text-4xl">
-          <strong className="text-[#5CE1E6]">Dash</strong>Go.
+          <Link to={"/"}>
+            <strong className="text-[#5CE1E6]">Dash</strong>Go.
+          </Link>
         </div>
 
         <div className="items [&>*]:cursor-pointer font-light my-14 flex flex-col space-y-8">
           <div className="flex flex-row space-x-5 items-center ">
-            <img src={dashboard} alt="" />
+            <MdSpaceDashboard
+              size={21}
+              color={themeMode === "dark" ? "black" : "white"}
+            />
             <Link to={"/"} className="text-xl">
               Dashboard
             </Link>
           </div>
           <div className="flex flex-row space-x-5 items-center ">
-            <img src={trans} alt="" />
+            <FaCalendarAlt
+              size={21}
+              color={themeMode === "dark" ? "black" : "white"}
+            />
             <Link to={"/calendar"} className="text-xl">
               Calender
             </Link>
           </div>
           <div className="flex flex-row space-x-5 items-center ">
-            <img src={sch} alt="" />
+            <MdViewKanban
+              size={21}
+              color={themeMode === "dark" ? "black" : "white"}
+            />
             <Link to={"/projects"} className="text-xl">
               Kanban
             </Link>
           </div>
           <div className="flex flex-row space-x-5 items-center ">
-            <img src={user} alt="" />
+            <FaRegUserCircle
+              size={21}
+              color={themeMode === "dark" ? "black" : "white"}
+            />
             <Link to={"/users"} className="text-xl">
               Users
             </Link>

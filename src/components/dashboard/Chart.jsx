@@ -15,6 +15,7 @@ function Chart() {
   const { chartData } = useContext(Context);
   const labels = ["", "Week 1", "Week 2", "Week 3", "Week 4"];
   const [data, setdata] = useState();
+  const { themeMode } = useContext(Context);
 
   // Setting data to chartData (got from context)
   useEffect(() => {
@@ -74,13 +75,18 @@ function Chart() {
   };
 
   return (
-    <div className="pb-5 bg-white rounded-2xl p-7 space-y-7">
+    <div
+      className={`pb-5 bg-white rounded-2xl p-7 space-y-7 dark:bg-[#313131] dark:text-white ${
+        themeMode === "dark" ? "shadow-lg" : ""
+      }`}
+      style={themeMode === "dark" ? { boxShadow: `2px 4px 10px rgb(67 67 67)` } : {}}
+    >
       {/* Heading Portion & Legends */}
       <div className="top-chart-bar flex flex-row justify-between">
         <div className="activites flex flex-col">
           <strong className="text-lg sm:text-2xl font-bold">Activities</strong>
-          <div className="font-thin text-sm sm:text-md text-gray-500">
-            May - June 2021
+          <div className="font-thin text-sm sm:text-md text-gray-500 dark:text-gray-50">
+            May - June 2024
           </div>
         </div>
 

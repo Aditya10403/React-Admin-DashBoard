@@ -26,23 +26,23 @@ export default function Form() {
 
   return (
     <div className="">
-      <section className="bg-gray-100 dark:bg-gray-900 rounded-lg">
+      <section className="bg-gray-300 dark:bg-gray-600 rounded-lg">
         <div className="flex flex-col-reverse sm:flex-row items-center justify-center lg:p-0 mx-auto">
           {/* Banner */}
           <div className="md:flex flex-col justify-between sm:w-[40%] w-full sm:h-full items-center hidden md:m-5">
-            <div className="font-bold text-center sm:flex items-center font-[Montserrat] justify-center text-white text-7xl">
+            <div className="font-bold text-center sm:flex items-center font-[Montserrat] justify-center dark:text-white text-7xl text-black">
               DashGo.
             </div>
-            <p className=" text-red-900">
+            <p className=" text-red-900 dark:text-red-300">
               Currently registering is not available!
             </p>
           </div>
           {/* Form */}
-          <div className="w-full sm:w-[60%] sm:h-full flex items-center justify-center rounded-lg shadow dark:border md:mt-0  xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+          <div className="w-full sm:w-[60%] sm:h-full flex items-center justify-center rounded-r-lg shadow md:mt-0  xl:p-0 bg-gray-600 dark:bg-gray-300">
             <div className="p-3 md:p-6 w-[28rem] self-center space-y-1 md:space-y-6 sm:p-2 md:my-5">
               {/* Heading */}
               <div>
-                <h1 className="text-2xl font-bold leading-tight tracking-tight text-gray-900 md:text-4xl dark:text-white">
+                <h1 className="text-2xl font-bold leading-tight tracking-tight md:text-4xl text-white">
                   Sign in
                 </h1>
                 <h4>Sign in to your account</h4>
@@ -51,12 +51,12 @@ export default function Form() {
               <div className="buttons text-sm [_&]:cursor-pointer flex justify-evenly md:justify-between items-center space-x-2">
                 <div
                   onClick={continueWithGoogle}
-                  className="btn md:w-1/2 bg-white text-gray-500 font-medium space-x-1 md:rounded-xl rounded-full py-1 sm:py-2 flex flex-row justify-evenly items-center px-1"
+                  className="btn md:w-1/2 bg-white text-gray-700 font-medium space-x-1 md:rounded-xl rounded-full py-1 sm:py-2 flex flex-row justify-evenly items-center px-1"
                 >
                   <img src={google} className="w-6" />
                   <span className="hidden md:block">Sign in with Google</span>
                 </div>
-                <div className="btn md:w-1/2 bg-white text-gray-500 font-medium space-x-1 rounded-full md:rounded-xl py-1  sm:py-2 flex flex-row justify-evenly items-center px-1 sm:px-3">
+                <div className="btn md:w-1/2 bg-white text-gray-700 font-medium space-x-1 rounded-full md:rounded-xl py-1  sm:py-2 flex flex-row justify-evenly items-center px-1 sm:px-3">
                   <img src={apple} className="w-6" />
                   <span className="hidden md:block">Sign in with Apple</span>
                 </div>
@@ -69,7 +69,7 @@ export default function Form() {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block mb-2 text-sm font-semibold text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-semibold text-gray-900"
                   >
                     Email adress
                   </label>
@@ -86,7 +86,7 @@ export default function Form() {
                 <div>
                   <label
                     htmlFor="password"
-                    className="block mb-2 text-sm font-semibold text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-semibold text-gray-900"
                   >
                     Password
                   </label>
@@ -117,11 +117,11 @@ export default function Form() {
                 </button>
               </form>
 
-              <p className="text-sm text-center font-light text-gray-500 dark:text-gray-400">
+              <p className="text-sm text-center font-light text-gray-300 dark:text-gray-700">
                 Don’t have an account?{" "}
                 <a
                   href="#"
-                  className="font-medium text-[rgb(52,107,212)]  text-primary-600 hover:underline dark:text-primary-500"
+                  className="font-medium text-blue-400 hover:underline dark:text-blue-700"
                 >
                   Register here
                 </a>

@@ -1,24 +1,35 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FiMenu } from "react-icons/fi";
-import notify from "../images/notify.svg";
 import { MdDarkMode, MdOutlineLightMode } from "react-icons/md";
+import { FaRegBell } from "react-icons/fa";
 import { BiSearch } from "react-icons/bi";
-import { Context } from "../context/contextApi";
+import useTheme, { Context } from "../context/contextApi";
 import { useContext } from "react";
 import avatar from "../images/avatar.png";
 import { Link } from "react-router-dom";
 
 export default function Navbar({ showSidebar, setShowSidebar }) {
   const { user } = useContext(Context);
-  const [mode, setMode] = useState(false);
 
-  const handleMode = () => {
-    setMode(!mode);
+  const { themeMode, lightTheme, darkTheme } = useTheme();
+
+  // actual change in theme
+  useEffect(() => {
+    document.querySelector("html").classList.remove("light", "dark");
+    document.querySelector("html").classList.add(themeMode);
+  }, [themeMode]);
+
+  const handleTheme = () => {
+    if (themeMode === "light") {
+      darkTheme();
+    } else {
+      lightTheme();
+    }
   };
 
   return (
     <nav className="flex flex-row justify-between">
-      <strong className="text-2xl ">Dashboard</strong>
+      <strong className="text-2xl text-black dark:text-white">Dashboard</strong>
 
       <div className="info hidden sm:flex space-x-10">
         <div className="input relative">
@@ -32,11 +43,20 @@ export default function Navbar({ showSidebar, setShowSidebar }) {
           </div>
         </div>
         <div className="flex">
-          <button onClick={handleMode}>
-            {mode ? <MdOutlineLightMode size={24} /> : <MdDarkMode size={24} />}
+          <button onClick={handleTheme}>
+            {themeMode === "dark" ? (
+              <MdOutlineLightMode size={24} color="white" />
+            ) : (
+              <MdDarkMode size={24} />
+            )}
           </button>
         </div>
-        <img src={notify} alt="" />
+        <div className="flex items-center">
+          <FaRegBell
+            size={21}
+            color={themeMode === "dark" ? "white" : "black"}
+          />
+        </div>
         <Link to="/form">
           <img
             className="w-9 h-9 rounded-full"

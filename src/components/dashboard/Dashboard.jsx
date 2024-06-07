@@ -9,8 +9,11 @@ import likes from "../../images/Vector (1).svg";
 import users from "../../images/Vector (2).svg";
 import trans from "../../images/total_transactions_icon.svg";
 import { useContext } from "react";
+import LineChart from "./LineChart";
 
 export default function Dashboard() {
+  const { themeMode } = useContext(Context);
+
   const getBgAndId = (card) => {
     switch (card.title) {
       case "Revenues":
@@ -39,7 +42,7 @@ export default function Dashboard() {
   return (
     <>
       {/* Upper four Cards */}
-      <div className="first grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4  h-1/5 gap-5 ">
+      <div className="first grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 h-1/5 gap-5">
         {cardData &&
           cardData.map((card, i) => {
             return (
@@ -61,12 +64,44 @@ export default function Dashboard() {
 
       {/* Lower Pie Chart & Schedules */}
       <div className="bottom grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div className="piechart bg-white rounded-2xl">
+        <div
+          className={`piechart bg-white rounded-2xl dark:bg-[#313131] dark:text-white ${
+            themeMode === "dark" ? "shadow-lg" : ""
+          }`}
+          style={
+            themeMode === "dark"
+              ? { boxShadow: `2px 4px 10px rgb(67 67 67)` }
+              : {}
+          }
+        >
           <PieChart />
         </div>
 
-        <div className="schedules bg-white rounded-2xl">
+        <div
+          className={`schedules bg-white rounded-2xl dark:bg-[#313131] dark:text-white ${
+            themeMode === "dark" ? "shadow-lg" : ""
+          }`}
+          style={
+            themeMode === "dark"
+              ? { boxShadow: `2px 4px 10px rgb(67 67 67)` }
+              : {}
+          }
+        >
           <Schedules />
+        </div>
+      </div>
+      <div className="bottom grid grid-cols-1 lg:grid-cols-1 gap-8">
+        <div
+          className={`piechart bg-white rounded-2xl pb-3 dark:bg-[#313131] dark:text-white ${
+            themeMode === "dark" ? "shadow-lg" : ""
+          }`}
+          style={
+            themeMode === "dark"
+              ? { boxShadow: `2px 4px 10px rgb(67 67 67)` }
+              : {}
+          }
+        >
+          <LineChart />
         </div>
       </div>
     </>

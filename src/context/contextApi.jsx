@@ -1,7 +1,31 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { response } from "../data/res";
 
-export const Context = createContext("");
+const initialThemeContext = {
+  themeMode: "light",
+  darkTheme: () => {},
+  lightTheme: () => {},
+};
+
+export const Context = createContext({
+  ...initialThemeContext,
+  user: {},
+  setUser: () => {},
+  chartData: {},
+  schedules: [],
+  cardData: [],
+  pieChartData: {},
+  KanbanData: [],
+  setKanbanData: () => {},
+  toolbarDate: new Date(),
+  setToolbarDate: () => {},
+  view: "month",
+  setView: () => {},
+  label: "",
+  setLabel: () => {},
+  date: new Date(),
+  setDate: () => {},
+});
 
 export const ContextProvider = ({ children }) => {
   const [user, setUser] = useState({});
@@ -56,6 +80,10 @@ export const ContextProvider = ({ children }) => {
   const [view, setView] = useState("month");
   const [label, setLabel] = useState("");
   const [date, setDate] = useState(new Date());
+  const [themeMode, setThemeMode] = useState("light");
+
+  const darkTheme = () => setThemeMode("dark");
+  const lightTheme = () => setThemeMode("light");
 
   const getDataFromApi = async () => {
     try {
@@ -80,6 +108,9 @@ export const ContextProvider = ({ children }) => {
   return (
     <Context.Provider
       value={{
+        themeMode,
+        darkTheme,
+        lightTheme,
         user,
         setUser,
         chartData,
@@ -102,3 +133,7 @@ export const ContextProvider = ({ children }) => {
     </Context.Provider>
   );
 };
+
+export default function useTheme() {
+  return useContext(Context);
+}
